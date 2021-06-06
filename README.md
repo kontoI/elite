@@ -1,3 +1,5 @@
+# SORY GUA HAPUS DULU FILENYA
+
 # comand/perintah
 
 pkg install git python2
