@@ -1,4 +1,3 @@
-# SORY GUA HAPUS DULU FILENYA
 
 # comand/perintah
 
