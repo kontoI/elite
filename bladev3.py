@@ -105,14 +105,14 @@ except requests.exceptions.ConnectionError:
 def ua_rozh():
 	rr = random.randint
 	rc = random.choice
-	A = f"Mozilla/5.0 (Linux; Android {str(rr(2,10))}; Redmi Note {str(rr(3,9))} Build/LRX22G; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 UCBrowser/{str(rr(10,100))}.0.3987.149" #ANDROID UCB
-	B = f"Mozilla/5.0 (Android {str(rr(2,10))}; E2303 Build/26.3.A.0.131) AppleWebKit/537.36 (KHTML, like Gecko) YaaniBrowser/4.3.0.153 (Turkcell-TR) Mobile Safari/537.36" #ANDROID
-	C = f"Mozilla/5.0 (Linux; Android {str(rr(2,10))}; Redmi Note {str(rr(3,9))} Build/LRX22G; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(10,100))}.0.4865.0 YaBrowser/21.9.0.359.00 SA/3 Mobile Safari/537.36" #ANDRID YANDX
-	D = f"Mozilla/5.0 (Linux; Android {str(rr(2,10))}; Nokia_XL; Flow) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(11,99))}.0.4044.138 Mobile Safari/537.36 OPR/{str(rr(11,99))}.2.2878.53403"
+	A = f"Mozilla/5.0 (Linux; Android 9; SM-G970F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36" #ANDROID UCB
+	B = f"Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-F900U Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.2 Chrome/67.0.3396.87 Mobile Safari/537.36" #ANDROID
+	C = f"Mozilla/5.0 (Linux; Android 9; SM-A505F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.105 Mobile Safari/537.36" #ANDRID YANDX
+	D = f"Mozilla/5.0 (Linux; Android 9; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.83 Mobile Safari/537.36"
 	E = f"Mozilla/5.0 (Linux; Android {str(rr(2,10))}; GT-I9060M) AppleWebKit/537.36 (KHTML, like Gecko) Opera Mini/{str(rr(2,20))}.0.35626/191.273" #ANDROID ORERA MINI
-	F =  f"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.3pre) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.889.00 Opera/537.36" #WINDOWS OPERA
+	F =  f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4758.102 Safari/537.36" #WINDOWS OPERA
 	baz = rc([A,B,C,D,F])
-	tz = f"Mozilla/5.0 (Linux; Android {str(rr(2,10))}; Nokia_XL; Flow) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{str(rr(10,100))}.0.0.303 Mobile Safari/537.36"
+	tz = f"Mozilla/5.0 (Linux; Android 9; SM-N976V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.89 Mobile Safari/537.36"
 	return tz	
 
 ###---[ CEK COOKIES ]---###
