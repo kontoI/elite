@@ -29,7 +29,7 @@ except Exception as e:
 	print('[[\x1b[1;92m•\x1b[1;97m] [\x1b[1;96mAlvino_adijaya_xy')
 prox=open('.prox.txt','r').read().splitlines()
 for xd in range(10000):
-    aa='Mozilla/5.0 (iPhone; CPU iPhone OS'
+    a='Mozilla/5.0 (iPhone; CPU iPhone OS'
     b=random.choice(['4','5','6','7','8','9','10','11','12'])
     c='like Mac OS X) Build/'
     d='AppleWebKit/605.1.15 (KHTML, like Gecko) Version/' 
