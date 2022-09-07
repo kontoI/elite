@@ -511,6 +511,11 @@ def otomatis():
 						except:pwx.append(nama)
 				else:
 					pwx.append(nama)
+					pwx.append(sayang)
+					pwx.append(anjing)
+					pwx.append(kontol)
+					pwx.append(anjing"123")
+					pwx.append(bismillah)
 					pwx.append(depan+"123")
 					pwx.append(depan+"12345")
 			if 'mobile' in metode:
